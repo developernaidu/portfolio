@@ -9,7 +9,7 @@ const skillCategories = [
   {
     title: 'Backend & Systems',
     icon: '⚙️',
-    skills: ['Nest JS', 'Node.js', 'Microservices', 'REST APIs', 'Bull JS']
+    skills: ['Nest JS', 'Node.js', 'Microservices', 'REST APIs', 'Bull JS', 'WebSockets']
   },
   {
     title: 'Data & Devops',

@@ -1,6 +1,9 @@
 import React from 'react';
 import profileImg from '../assets/profile.png';
 
+// Note: To use your actual logo, save the image as 'schemax_logo.png' in 'src/assets/'
+const schemaxLogo = '/src/assets/schemax_logo.png';
+
 const Resume = () => {
   const handlePrint = () => {
     window.print();
@@ -9,13 +12,13 @@ const Resume = () => {
   return (
     <div style={{ padding: '2rem', background: '#e0e0e0', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       {/* Print Button (Hidden during print) */}
-      <button 
-        onClick={handlePrint} 
+      <button
+        onClick={handlePrint}
         className="no-print"
-        style={{ 
-          background: '#1e293b', 
-          color: '#fff', 
-          padding: '0.75rem 2rem', 
+        style={{
+          background: '#1e293b',
+          color: '#fff',
+          padding: '0.75rem 2rem',
           borderRadius: '50px',
           fontWeight: 600,
           marginBottom: '2rem',
@@ -28,132 +31,202 @@ const Resume = () => {
 
       {/* Resume Paper */}
       <div id="resume-paper" style={{
-        width: '210mm',
+        width: '230mm',
         minHeight: '297mm',
         background: '#fff',
         display: 'grid',
-        gridTemplateColumns: '32% 68%',
-        boxShadow: '0 0 40px rgba(0,0,0,0.2)',
+        gridTemplateColumns: '35% 65%',
+        boxShadow: '0 0 50px rgba(0,0,0,0.25)',
         color: '#1a1a1a',
         fontFamily: "'Inter', sans-serif",
-        lineHeight: '1.4',
+        lineHeight: '1.25',
         overflow: 'hidden'
       }}>
-        
+
         {/* SIDEBAR (Left) */}
-        <aside style={{ background: '#1e293b', color: '#fff', padding: '40px 30px' }}>
+        <aside style={{ background: '#1e293b', color: '#fff', padding: '30px 20px' }}>
           {/* Profile Picture */}
-          <div style={{ 
-            width: '150px', 
-            height: '150px', 
-            borderRadius: '50%', 
-            border: '4px solid #fff', 
-            margin: '0 auto 40px',
+          <div style={{
+            width: '120px',
+            height: '120px',
+            borderRadius: '50%',
+            border: '4px solid #fff',
+            margin: '0 auto 20px',
             overflow: 'hidden',
-            background: '#334155'
+            background: '#334155',
+            boxShadow: '0 5px 15px rgba(0,0,0,0.3)'
           }}>
-            <img 
-              src={profileImg} 
-              alt="Kilaparthi Yernaidu" 
+            <img
+              src={profileImg}
+              alt="K. Yernaidu"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '👨‍💻'; }}
             />
           </div>
 
           {/* CONTACT */}
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '1.1rem', letterSpacing: '1px', marginBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '5px' }}>CONTACT</h2>
-            <div style={{ fontSize: '0.85rem', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><span>📞</span> <span>+91 9515603659</span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', whiteSpace: 'nowrap' }}><span>✉️</span> <span>naidulokesh728@gmail.com</span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><span>📍</span> <span>Vizag, AP</span></div>
-            </div>
-          </div>
-
-          {/* EDUCATION */}
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '1.1rem', letterSpacing: '1px', marginBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '5px' }}>EDUCATION</h2>
-            <div style={{ fontSize: '0.85rem' }}>
-              <p style={{ fontWeight: 700, marginBottom: '5px' }}>2015 - 2018</p>
-              <p style={{ marginBottom: '15px' }}>Diploma in MECH Engineering</p>
-              
-              <p style={{ fontWeight: 700, marginBottom: '5px' }}>2015</p>
-              <p>10th Standard - Yellamamba Public School</p>
+          <div style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>CONTACT</h2>
+            <div style={{ fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span>📞</span> <span>+91 9515603659</span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', wordBreak: 'break-all' }}><span>✉️</span> <span>naidulokesh728@gmail.com</span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span>📍</span> <span>Vizag, AP, India</span></div>
             </div>
           </div>
 
           {/* EXPERTISE / SKILLS */}
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '1.1rem', letterSpacing: '1px', marginBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '5px' }}>EXPERTISE</h2>
-            <ul style={{ fontSize: '0.85rem', paddingLeft: '15px', listStyleType: 'circle' }}>
-              <li style={{ marginBottom: '8px' }}>Full Stack Development (Node.js, React)</li>
-              <li style={{ marginBottom: '8px' }}>RESTful API & Microservices Design</li>
-              <li style={{ marginBottom: '8px' }}>ERP System Architecture</li>
-              <li style={{ marginBottom: '8px' }}>Database Modeling & Optimization</li>
-              <li style={{ marginBottom: '8px' }}>Data Migration & ETL</li>
-              <li style={{ marginBottom: '8px' }}>Enterprise Logic Management</li>
+          <div style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>EXPERTISE</h2>
+            <ul style={{ fontSize: '0.78rem', paddingLeft: '15px', listStyleType: 'circle', lineHeight: '1.4' }}>
+              <li style={{ marginBottom: '4px' }}>Full Stack (Node / React)</li>
+              <li style={{ marginBottom: '4px' }}>Rest API & Microservices</li>
+              <li style={{ marginBottom: '4px' }}>ERP System Architecture</li>
+              <li style={{ marginBottom: '4px' }}>Database & ETL Migration</li>
             </ul>
           </div>
 
+          <div style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>TECH SKILLS</h2>
+            <div style={{ fontSize: '0.72rem', lineHeight: '1.4', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+              <span>• ReactJS, TypeScript, AntD</span>
+              <span>• Node.js, NestJS, MySQL</span>
+              <span>• Redis, BullJS, Microservices</span>
+              <span>• NX, Redux, WebSockets</span>
+              <span>• Git, GitLab, Cron Jobs</span>
+            </div>
+          </div>
+
+          {/* EDUCATION */}
+          <div style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>EDUCATION</h2>
+            <div style={{ fontSize: '0.75rem' }}>
+              <p style={{ fontWeight: 700 }}>2015 - 2018</p>
+              <p style={{ marginBottom: '8px' }}>Diploma in MECH Engineering - Machilipatnam GVT College</p>
+              <p style={{ fontWeight: 700 }}>2015</p>
+              <p>10th Standard</p>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>PERSONAL</h2>
+            <div style={{ fontSize: '0.7rem', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+              <div><strong>DOB:</strong> 10-Jun-2000</div>
+              <div><strong>Languages:</strong> Telugu, English, Hindi</div>
+              <div style={{ marginTop: '3px' }}>
+                <strong>Current Addr:</strong><br/>
+                MVP, Sector 6, Visakhapatnam
+              </div>
+              <div style={{ marginTop: '3px' }}>
+                <strong>Permanent Addr:</strong><br/>
+                Laxmipuram, VZM Dist
+              </div>
+            </div>
+          </div>
+
           <div>
-            <h2 style={{ fontSize: '1.1rem', letterSpacing: '1px', marginBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '5px' }}>SKILLS</h2>
-            <div style={{ fontSize: '0.85rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span>• REACT</span>
-              <span>• NODE JS</span>
-              <span>• NEST JS</span>
-              <span>• REDIS</span>
-              <span>• MYSQL</span>
-              <span>• MICRO SERVICES</span>
-              <span>• TYPESCRIPT</span>
-              <span>• NX</span>
-              <span>• BULL JS</span>
-              <span>• EXCEL / FS Processing</span>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>HOBBIES</h2>
+            <div style={{ fontSize: '0.75rem' }}>
+              Volley Ball, Cricket
             </div>
           </div>
         </aside>
 
         {/* MAIN BODY (Right) */}
-        <main style={{ padding: '60px 50px' }}>
-          <div style={{ marginBottom: '40px' }}>
-            <h1 style={{ fontSize: '3rem', fontWeight: 800, margin: '0', color: '#1e293b' }}>KILAPARTHI <span style={{ fontWeight: 400 }}>YERNAIDU</span></h1>
-            <p style={{ fontSize: '1.2rem', color: '#64748b', letterSpacing: '2px', marginTop: '5px' }}>FULL STACK DEVELOPER</p>
+        <main style={{ padding: '30px 35px' }}>
+          <div style={{ marginBottom: '20px' }}>
+            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0', color: '#1e293b', lineHeight: '1' }}>K. <span style={{ fontWeight: 400 }}>YERNAIDU</span></h1>
+            <p style={{ fontSize: '1rem', color: '#64748b', letterSpacing: '2px', marginTop: '5px' }}>FULL STACK DEVELOPER</p>
           </div>
 
           {/* SUMMARY */}
-          <section style={{ marginBottom: '15px' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#1e293b', marginBottom: '12px', borderBottom: '3px solid #1e293b', width: 'fit-content', paddingRight: '20px' }}>PROFESSIONAL SUMMARY</h2>
-            <p style={{ fontSize: '0.9rem', color: '#475569', textAlign: 'justify', margin: '0' }}>
+          <section style={{ margin: '0 0 5px 0', padding: '0' }}>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1e293b', margin: '0 0 5px 0', borderBottom: '2px solid #1e293b', paddingBottom: '2px' }}>PROFESSIONAL SUMMARY</h2>
+            <p style={{ fontSize: '0.85rem', color: '#475569', textAlign: 'justify', margin: '0', padding: '0' }}>
               Dedicated Full Stack Engineer with over 2 years of experience in architecting and developing high-performance ERP systems and complex automation solutions. Expert in React.js, Node.js, NestJS, and TypeScript. Specializing in digitizing large-scale manual workflows, RESTful API Design, Background Processing (BullJS/Redis), and Database Schema Optimization. Adept at leading cross-functional teams to deliver scalable, production-ready software.
             </p>
           </section>
 
           {/* EXPERIENCE */}
-          <section>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#1e293b', marginBottom: '15px', borderBottom: '3px solid #1e293b', width: 'fit-content', paddingRight: '20px' }}>WORK EXPERIENCE</h2>
+          {/* EXPERIENCE */}
+          <section style={{ margin: '15px 0 0 0', padding: '0' }}>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1e293b', margin: '0 0 12px 0', borderBottom: '2px solid #1e293b', paddingBottom: '3px' }}>WORK EXPERIENCE</h2>
             
-            <div style={{ marginBottom: '25px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, margin: '0' }}>SCHEMAX EXPORT TECHNO CRAFT</h3>
-                <span style={{ fontSize: '0.9rem', color: '#64748b' }}>2022 - PRESENT</span>
+            <div style={{ marginBottom: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, margin: '0', color: '#1e293b' }}>SCHEMAX EXPORT TECHNO CRAFT</h3>
+                <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600 }}>2022 - PRESENT</span>
               </div>
-              <p style={{ color: '#1e3a8a', fontWeight: 600, fontSize: '0.95rem', margin: '0 0 10px 0' }}>Full Stack Developer</p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', color: '#475569' }}>
-                <div style={{ margin: '0' }}>
-                  <strong style={{ color: '#1e293b' }}>Exportx ERPX: </strong>
-                  Led development of Costing, Procurement, and Currency Conversion modules. Streamlined PO/SO creation and master data management components for Indonesian Coal Industry project (Sai Resources).
-                </div>
-                <div style={{ margin: '0' }}>
-                  <strong style={{ color: '#1e293b' }}>Xpparel SaaS: </strong>
-                  Architected packing, dispatch, and warehouse modules using Microservices. Implemented resilient background job processing with BullJS and Redis for Bangladesh Apparel Industry project.
-                </div>
-                <div style={{ margin: '0' }}>
-                  <strong style={{ color: '#1e293b' }}>Sakku Industry Portal: </strong>
-                  Automated daily egg rate tracking with WhatsApp/Email alerts. Built complex reporting structures and third-party Focus integrations for Portfolio Poultry project.
-                </div>
-                <div style={{ margin: '0' }}>
-                  <strong style={{ color: '#1e293b' }}>Swatches Library (Open Source): </strong>
-                  Developed a specialized UI utility for consistent color swatch management across professional frontend applications.
+              <div style={{ position: 'relative', paddingLeft: '25px', marginTop: '5px' }}>
+                {/* Vertical Timeline Line */}
+                <div style={{ 
+                  position: 'absolute', 
+                  left: '7px', 
+                  top: '10px', 
+                  bottom: '5px', 
+                  width: '2px', 
+                  background: '#1e3a8a' 
+                }}></div>
+                
+                {/* Timeline Top Dot */}
+                <div style={{ 
+                  position: 'absolute', 
+                  left: '3px', 
+                  top: '0px', 
+                  width: '10px', 
+                  height: '10px', 
+                  borderRadius: '50%', 
+                  background: '#1e3a8a',
+                  border: '2px solid #fff' 
+                }}></div>
+
+                <p style={{ color: '#1e3a8a', fontWeight: 700, fontSize: '0.95rem', margin: '0 0 15px 0' }}>Full Stack Developer</p>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                  {/* Project 1 */}
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1e293b' }}>1. Exportx ERPX (Sai Resources) - Coal Industry (Indonesia)</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', marginBottom: '4px' }}>React JS, AntD, TS, NestJS, MySQL, NX, Redux, UserManagement</div>
+                    <ul style={{ fontSize: '0.8rem', color: '#475569', paddingLeft: '18px', listStyleType: 'disc', margin: '0', lineHeight: '1.4' }}>
+                      <li>Lead: Costing modules, Master management, PO/SO creation, Procurement, and Currency conversion.</li>
+                    </ul>
+                  </div>
+
+                  {/* Project 2 */}
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1e293b' }}>2. Sustainability Project (Shahi) - Apparel Industry</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', marginBottom: '4px' }}>React JS, NestJS, TS, MySQL, NX, Redux, UserManagement</div>
+                    <ul style={{ fontSize: '0.8rem', color: '#475569', paddingLeft: '18px', listStyleType: 'disc', margin: '0', lineHeight: '1.4' }}>
+                      <li>Lead: Project Planning, Core Structure development, and UI Designing.</li>
+                    </ul>
+                  </div>
+
+                  {/* Project 3 */}
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1e293b' }}>3. Sakku Project - Poultry/Eggs Industry (Rate Tracking)</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', marginBottom: '4px' }}>NestJS, WhatsApp/Email Alerts, Focus Integration, Bot Screenshot, Crons</div>
+                    <ul style={{ fontSize: '0.8rem', color: '#475569', paddingLeft: '18px', listStyleType: 'disc', margin: '0', lineHeight: '1.4' }}>
+                      <li>Lead: Architecture, Integration with Focus ERP, real-time alert systems, and reports.</li>
+                    </ul>
+                  </div>
+
+                  {/* Project 4 */}
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1e293b' }}>4. Xpparel Project - Apparel Industry (Bangladesh)</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', marginBottom: '4px' }}>Microservices, NestJS, BullJS, Redis, React, NX, HRIS Module</div>
+                    <ul style={{ fontSize: '0.8rem', color: '#475569', paddingLeft: '18px', listStyleType: 'disc', margin: '0', lineHeight: '1.4' }}>
+                      <li>Lead: Packing module, FG-Warehouse, Dispatch, Logistics, and HRIS integration.</li>
+                    </ul>
+                  </div>
+
+                  {/* Project 5 */}
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1e293b' }}>5. WFX to Xpparel Data Migration (Automated ETL)</div>
+                    <div style={{ fontSize: '0.75rem', color: '#64748b', fontStyle: 'italic', marginBottom: '4px' }}>Node.js (FS), Excel processing, BullJS, Redis, NestJS, Microservices</div>
+                    <ul style={{ fontSize: '0.8rem', color: '#475569', paddingLeft: '18px', listStyleType: 'disc', margin: '0', lineHeight: '1.4' }}>
+                      <li>Lead: Engineered migration engine, API management, Disk I/O (FS), and Excel ETL.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -161,7 +234,8 @@ const Resume = () => {
         </main>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         @media print {
           .no-print { display: none !important; }

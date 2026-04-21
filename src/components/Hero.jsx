@@ -47,7 +47,7 @@ const Hero = ({ onViewResume }) => {
           background: 'linear-gradient(to right, #fff, #94a3b8)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
-        }}>Kilaparthi Yernaidu</h1>
+        }}>K. Yernaidu</h1>
 
         <h2 style={{
           fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
