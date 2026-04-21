@@ -199,7 +199,6 @@ function App() {
           </div>
         </div>
       </nav>
->
 
       {/* Hero Section */}
       <Hero onViewResume={() => setView('resume')} />
