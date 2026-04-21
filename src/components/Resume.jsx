@@ -1,4 +1,5 @@
 import React from 'react';
+import profileImg from '../assets/profile.png';
 
 const Resume = () => {
   const handlePrint = () => {
@@ -52,7 +53,7 @@ const Resume = () => {
             background: '#334155'
           }}>
             <img 
-              src="/src/assets/profile.png" 
+              src={profileImg} 
               alt="Kilaparthi Yernaidu" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '👨‍💻'; }}

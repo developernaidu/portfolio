@@ -1,3 +1,6 @@
+import React from 'react';
+import profileImg from '../assets/profile.png';
+
 // import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 const Hero = ({ onViewResume }) => {
@@ -24,7 +27,7 @@ const Hero = ({ onViewResume }) => {
           background: 'rgba(99, 102, 241, 0.1)'
         }}>
           <img 
-            src="/src/assets/profile.png" 
+            src={profileImg} 
             alt="Kilaparthi Yernaidu" 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<div style="font-size: 4rem; display: flex; align-items: center; justify-content: center; height: 100%;">👨‍💻</div>'; }}
