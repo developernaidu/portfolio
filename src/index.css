@@ -4,23 +4,28 @@
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', var(--font-main);
   
-  --bg-dark: #0a0a0c;
+  --bg-color: #0a0a0c;
+  --text-color: #f8fafc;
+  --bg-dark: var(--bg-color);
   --bg-card: rgba(255, 255, 255, 0.03);
   --bg-card-hover: rgba(255, 255, 255, 0.06);
   
-  --primary: #6366f1;
-  --primary-glow: rgba(99, 102, 241, 0.5);
+  --accent: #6366f1; /* Default Indigo */
+  --accent-glow: rgba(99, 102, 241, 0.5);
+  
+  --primary: var(--accent);
+  --primary-glow: var(--accent-glow);
   --secondary: #a855f7;
   --secondary-glow: rgba(168, 85, 247, 0.5);
   
-  --text-primary: #f8fafc;
+  --text-primary: var(--text-color);
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   
   --border: rgba(255, 255, 255, 0.1);
   --border-hover: rgba(255, 255, 255, 0.2);
   
-  --glass-bg: rgba(15, 15, 20, 0.7);
+  --glass-bg: rgba(15, 15, 20, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
