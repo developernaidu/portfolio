@@ -30,17 +30,17 @@ const Resume = () => {
       </button>
 
       {/* Resume Paper */}
-      <div id="resume-paper" style={{
-        width: '230mm',
+      <div id="resume-paper" className="resume-grid" style={{
+        width: '100%',
+        maxWidth: '230mm',
         minHeight: '297mm',
         background: '#fff',
-        display: 'grid',
-        gridTemplateColumns: '35% 65%',
         boxShadow: '0 0 50px rgba(0,0,0,0.25)',
         color: '#1a1a1a',
         fontFamily: "'Inter', sans-serif",
         lineHeight: '1.25',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        margin: '2rem auto'
       }}>
 
         {/* SIDEBAR (Left) */}
@@ -237,10 +237,34 @@ const Resume = () => {
       <style dangerouslySetInnerHTML={{
         __html: `
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        .resume-grid {
+          display: grid;
+          grid-template-columns: 35% 65%;
+        }
+
+        @media (max-width: 850px) {
+          .resume-grid {
+            grid-template-columns: 1fr !important;
+          }
+          #resume-paper {
+            margin: 0 !important;
+            border-radius: 0 !important;
+          }
+        }
+
         @media print {
           .no-print { display: none !important; }
           body { background: #fff !important; padding: 0 !important; }
-          #resume-paper { box-shadow: none !important; margin: 0 !important; width: 210mm !important; }
+          #resume-paper { 
+            box-shadow: none !important; 
+            margin: 0 !important; 
+            width: 210mm !important; 
+            max-width: none !important;
+          }
+          .resume-grid {
+            grid-template-columns: 35% 65% !important;
+          }
         }
       `}} />
     </div>

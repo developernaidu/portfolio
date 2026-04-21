@@ -85,123 +85,66 @@ function App() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        padding: isScrolled ? '1rem 0' : '1.5rem 0',
+        padding: isScrolled ? '0.5rem 0' : '0.8rem 0',
         transition: 'var(--transition)',
         borderBottom: isScrolled ? '1px solid var(--glass-border)' : '1px solid transparent',
-        background: isScrolled ? 'var(--glass-bg)' : 'transparent'
+        background: isScrolled ? 'var(--glass-bg)' : 'rgba(10,10,12,0.8)',
+        backdropFilter: 'blur(10px)'
       }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontSize: '1.5rem', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>
+        <div className="container" style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          gap: '0.5rem'
+        }}>
+          <div style={{ fontSize: '1.1rem', fontWeight: 800, fontFamily: 'var(--font-heading)', whiteSpace: 'nowrap' }}>
             developernaidu<span style={{ color: 'var(--primary)' }}>.</span>
           </div>
           
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-            {/* Background Theme Switcher */}
-            <div className="no-print" style={{ 
-              display: 'flex', 
-              gap: '6px', 
-              alignItems: 'center', 
-              background: 'rgba(255,255,255,0.05)', 
-              padding: '4px 12px', 
-              borderRadius: '50px',
-              border: '1px solid var(--glass-border)'
-            }}>
-              {bgThemes.map(t => (
-                <button
-                  key={t.name}
-                  onClick={() => setBgTheme(t.name.toLowerCase())}
-                  style={{
-                    fontSize: '0.65rem',
-                    fontWeight: 700,
-                    padding: '4px 10px',
-                    borderRadius: '20px',
-                    background: bgTheme === t.name.toLowerCase() ? 'var(--accent)' : 'transparent',
-                    color: bgTheme === t.name.toLowerCase() ? '#fff' : 'var(--text-color)',
-                    cursor: 'pointer',
-                    transition: 'var(--transition)',
-                  }}
-                >
-                  {t.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Accent Color Picker */}
-            <div className="no-print" style={{ 
-              display: 'flex', 
-              gap: '10px', 
-              alignItems: 'center', 
-              background: 'rgba(255,255,255,0.05)', 
-              padding: '6px 16px', 
-              borderRadius: '50px',
-              border: '1px solid var(--glass-border)'
-            }}>
-              {themes.map(t => (
-                <button 
-                  key={t.name}
-                  onClick={() => setAccentColor(t.color)}
-                  title={t.name}
-                  style={{ 
-                    width: '18px', 
-                    height: '18px', 
-                    borderRadius: '50%', 
-                    background: t.color,
-                    border: accentColor === t.color ? '2px solid white' : 'none',
-                    cursor: 'pointer',
-                    transition: 'var(--transition)'
-                  }}
-                  onMouseEnter={(e) => { e.target.style.transform = 'scale(1.2)'; }}
-                  onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; }}
-                />
-              ))}
-              
-              <div style={{ position: 'relative', width: '22px', height: '22px' }}>
-                <div style={{ 
-                  width: '22px', 
-                  height: '22px', 
-                  borderRadius: '50%', 
-                  background: 'linear-gradient(45deg, #f06, #09f, #0f6)', 
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  color: 'white',
-                  fontWeight: 900
-                }}
-                onClick={() => document.getElementById('customColorPicker').click()}
-                >
-                  +
-                </div>
-                <input 
-                  id="customColorPicker"
-                  type="color" 
-                  value={accentColor}
-                  onChange={(e) => setAccentColor(e.target.value)}
-                  style={{ position: 'absolute', opacity: 0, width: 0, height: 0, pointerEvents: 'none' }}
-                />
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-              <a href="#about" style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>About</a>
-              <a href="#projects" style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)' }}>Projects</a>
-              <button onClick={() => setView('resume')} style={{ fontSize: '0.85rem', fontWeight: 500, color: 'var(--text-color)', cursor: 'pointer' }}>Resume</button>
+          <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+            {/* Very Compact Mobile Nav Links */}
+            <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+              <button onClick={() => setView('resume')} style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-color)', cursor: 'pointer', background: 'none', border: 'none' }}>Resume</button>
+              <a href="#projects" style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-color)' }}>Work</a>
               <a href="#contact" style={{ 
-                fontSize: '0.85rem', 
-                fontWeight: 600, 
-                padding: '0.5rem 1rem', 
+                fontSize: '0.7rem', 
+                fontWeight: 700, 
+                padding: '0.35rem 0.8rem', 
                 borderRadius: '50px',
                 backgroundColor: 'var(--primary)',
                 color: 'white'
-              }}>Contact</a>
+              }}>Hire</a>
             </div>
+          </div>
+        </div>
+        
+        {/* Sub-Nav for Mobile Settings (Optional/Compact) */}
+        <div className="settings-sub-nav no-print" style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '15px', 
+          padding: '8px 0', 
+          borderTop: '1px solid var(--glass-border)',
+          marginTop: '5px',
+          overflowX: 'auto'
+        }}>
+          <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.05)', padding: '2px 8px', borderRadius: '50px' }}>
+            {bgThemes.map(t => (
+              <button key={t.name} onClick={() => setBgTheme(t.name.toLowerCase())} style={{ fontSize: '0.55rem', padding: '2px 6px', borderRadius: '20px', background: bgTheme === t.name.toLowerCase() ? 'var(--accent)' : 'transparent', color: '#fff', border: 'none' }}>{t.name[0]}</button>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: '6px', background: 'rgba(255,255,255,0.05)', padding: '4px 10px', borderRadius: '50px' }}>
+            {themes.map(t => (
+              <button key={t.name} onClick={() => setAccentColor(t.color)} style={{ width: '12px', height: '12px', borderRadius: '50%', background: t.color, border: accentColor === t.color ? '1.5px solid white' : 'none' }} />
+            ))}
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <Hero onViewResume={() => setView('resume')} />
+      <div style={{ paddingTop: '80px' }}>
+        {/* Hero Section */}
+        <Hero onViewResume={() => setView('resume')} />
+      </div>
 
       {/* About Section */}
       <About />

@@ -1,82 +1,38 @@
-# 🚀 Professional Portfolio & Resume - developernaidu
+# Professional Full Stack Portfolio & Resume
 
-A modern, premium personal portfolio website and professional printable resume built with React and Vite. Focused on showcasing ERP solutions, Microservices expertise, and Full Stack development skills.
+A high-performance, professional portfolio website and printable resume built with React and custom CSS.
 
-## 🔗 Live Demo
-**Portfolio:** [https://developernaidu.github.io/portfolio/](https://developernaidu.github.io/portfolio/)
-
----
+## 🚀 Key Features
+- **Dynamic Themes:** Toggle between Light, Dark, and Midnight modes.
+- **Custom Accents:** Pick your own primary brand color on the fly.
+- **Printable Resume:** A professional, timeline-styled resume optimized for A4 printing.
+- **Microservices & ERP Showcases:** Detailed project walkthroughs for high-scale enterprise applications.
+- **100% Mobile Responsive:** Every section is hand-crafted to look perfect on phones, tablets, and desktops.
 
 ## 🛠️ Tech Stack
-- **Frontend:** React JS, Vanilla CSS (Glassmorphism, Dark Mode)
-- **Icons:** Emoji-based (Stable)
-- **Deployment:** GitHub Pages
-- **Organization:** NX Monorepo style organization
+- **Frontend:** React, JavaScript (ES6+), Ant Design (for specific components).
+- **Styling:** Vanilla CSS with a global design system of variables.
+- **Layout:** CSS Grid and Flexbox for precise control.
+- **Responsiveness:** Fluid typography and adaptive stacking strategies.
 
-## 📂 Project Structure
-- `src/components/Hero.jsx`: Landing section with professional identity.
-- `src/components/About.jsx`: Background, education, and hobbies.
-- `src/components/Projects.jsx`: Showcase of professional ERP & SaaS projects.
-- `src/components/Skills.jsx`: Technical expertise categorization.
-- `src/components/Resume.jsx`: Professional printable two-column resume view.
+## 📦 How to Run Locally
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
----
+## 📄 Printable Resume
+To print your professional resume:
+1. Navigate to the `/resume` route.
+2. Click the **"Print Resume"** button.
+3. Your browser will open the print dialog with styling optimized for A4 paper.
 
-## 🚀 Getting Started
-
-### 1. Prerequisites
-- Node.js (v16+)
-- npm
-
-### 2. Installation
-```bash
-npm install
-```
-
-### 3. Local Development
-```bash
-npm run dev
-```
-Open [http://localhost:5173](http://localhost:5173) to view the site.
-
----
-
-## 🌐 Deployment to GitHub Pages
-
-### Step 1: Replace Personal Identity
-If you haven't already, confirm your details in `package.json`:
-```json
-"homepage": "https://developernaidu.github.io/portfolio/"
-```
-
-### Step 2: Initialize Git & Connect Remote
-```bash
-git init
-git remote add origin https://github.com/developernaidu/portfolio.git
-```
-
-### Step 3: Deploy
-Run the automated deployment script:
-```bash
-npm run deploy
-```
-*This command will automatically build the project and push the `dist` folder to the `gh-pages` branch.*
-
----
-
-## 📑 How to Export Resume as PDF
-1. Navigate to the **Resume** page via the Portfolio navigation.
-2. Click the **"🖨️ Print / Save as PDF"** button.
-3. In your browser's print dialog:
-   - **Destination:** Save as PDF
-   - **Layout:** Portrait
-   - **Margins:** Default/None
-4. Save the file!
-
----
-
-## 👤 Author
-**Kilaparthi Yernaidu (@developernaidu)**
-- Email: naidulokesh728@gmail.com
-- Phone: +91 9515603659
-- Specialization: Full Stack Developer (ERP & Microservices)
+## 🤝 Contact
+- **Developer:** Kilaparthi Yernaidu
+- **Phone:** +91 9515603659
+- **Email:** naidulokesh728@gmail.com
+- **Location:** Visakhapatnam, AP
