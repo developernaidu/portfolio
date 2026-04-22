@@ -127,7 +127,7 @@ const Resume = () => {
           </div>
 
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>PERSONAL</h2>
+            <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>PERSONAL DETAILS</h2>
             <div style={{ fontSize: '0.7rem', display: 'flex', flexDirection: 'column', gap: '5px' }}>
               <div><strong>Name:</strong> k.Yernaidu</div>
               <div><strong>DOB:</strong> 10-Jun-2000</div>
