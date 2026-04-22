@@ -101,19 +101,62 @@ function App() {
             developernaidu<span style={{ color: 'var(--primary)' }}>.</span>
           </div>
           
-          <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
-            {/* Very Compact Mobile Nav Links */}
-            <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
-              <button onClick={() => setView('resume')} style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-color)', cursor: 'pointer', background: 'none', border: 'none' }}>Resume</button>
-              <a href="#projects" style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-color)' }}>Work</a>
-              <a href="#contact" style={{ 
-                fontSize: '0.7rem', 
+          <div className="nav-controls" style={{ 
+            display: 'flex', 
+            gap: '1.5rem', 
+            alignItems: 'center', 
+          }}>
+            {/* Desktop-Only Theme Switchers */}
+            <div className="desktop-only no-print" style={{ 
+              display: 'flex', 
+              gap: '1rem', 
+              alignItems: 'center'
+            }}>
+              <div style={{ 
+                display: 'flex', 
+                gap: '4px', 
+                background: 'rgba(255,255,255,0.05)', 
+                padding: '4px 10px', 
+                borderRadius: '50px',
+                border: '1px solid var(--glass-border)'
+              }}>
+                {bgThemes.map(t => (
+                  <button key={t.name} onClick={() => setBgTheme(t.name.toLowerCase())} style={{ fontSize: '0.6rem', fontWeight: 700, padding: '4px 10px', borderRadius: '20px', background: bgTheme === t.name.toLowerCase() ? 'var(--accent)' : 'transparent', color: '#fff', cursor: 'pointer', border: 'none' }}>{t.name}</button>
+                ))}
+              </div>
+
+              <div style={{ 
+                display: 'flex', 
+                gap: '10px', 
+                background: 'rgba(255,255,255,0.05)', 
+                padding: '6px 16px', 
+                borderRadius: '50px',
+                border: '1px solid var(--glass-border)'
+              }}>
+                {themes.map(t => (
+                  <button key={t.name} onClick={() => setAccentColor(t.color)} style={{ width: '16px', height: '16px', borderRadius: '50%', background: t.color, border: accentColor === t.color ? '2px solid white' : 'none', cursor: 'pointer' }} />
+                ))}
+              </div>
+            </div>
+
+            <div className="nav-links" style={{ display: 'flex', gap: '1.2rem', alignItems: 'center' }}>
+              <a href="#about" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-color)' }}>About</a>
+              <button 
+                onClick={() => setView('resume')} 
+                style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-color)', cursor: 'pointer', background: 'none', border: 'none' }}
+              >
+                Resume
+              </button>
+              <a href="#projects" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-color)' }}>Work</a>
+              <a href="#contact" className="hire-btn" style={{ 
+                fontSize: '0.85rem', 
                 fontWeight: 700, 
-                padding: '0.35rem 0.8rem', 
+                padding: '0.5rem 1.25rem', 
                 borderRadius: '50px',
                 backgroundColor: 'var(--primary)',
-                color: 'white'
-              }}>Hire</a>
+                color: 'white',
+                boxShadow: '0 4px 12px var(--primary-glow)'
+              }}>Contact</a>
             </div>
           </div>
         </div>
@@ -184,14 +227,14 @@ function App() {
 
       {/* Footer */}
       <footer className="glass" style={{ padding: '4rem 0', borderTop: '1px solid var(--glass-border)' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            © 2026 Kilaparthi Yernaidu (@developernaidu).
+            © {new Date().getFullYear()} Kilaparthi Yernaidu (@developernaidu).
           </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <button onClick={() => setView('resume')} style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Resume</button>
+            <button onClick={() => setView('resume')} style={{ color: 'var(--text-muted)', fontSize: '0.9rem', background: 'none', border: 'none', cursor: 'pointer' }}>Resume</button>
             <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>GitHub</a>
-            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>LinkedIn</a>
+            <a href="https://www.linkedin.com/in/kilaparthi-yernaidu-232689246/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>LinkedIn</a>
           </div>
         </div>
       </footer>

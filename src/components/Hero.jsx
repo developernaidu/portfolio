@@ -96,10 +96,8 @@ const Hero = ({ onViewResume }) => {
           </a>
         </div>
 
-        <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-          {/* <a href="#" className="social-icon"><Github size={24} /></a>
-          <a href="#" className="social-icon"><Linkedin size={24} /></a>
-          <a href="#" className="social-icon"><Mail size={24} /></a> */}
+        <div style={{ display: 'flex', gap: '2.5rem', justifyContent: 'center', alignItems: 'center' }}>
+          <a href="https://www.linkedin.com/in/kilaparthi-yernaidu-232689246/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', fontSize: '1.1rem' }}>LinkedIn Profile 🔗</a>
           <span style={{ color: 'var(--text-muted)' }}>Scroll down to see more</span>
         </div>
       </div>

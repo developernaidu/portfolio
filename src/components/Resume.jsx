@@ -5,29 +5,47 @@ import profileImg from '../assets/profile.png';
 const schemaxLogo = '/src/assets/schemax_logo.png';
 
 const Resume = () => {
+  const yearsExp = new Date().getFullYear() - 2022;
+
   const handlePrint = () => {
     window.print();
   };
 
   return (
     <div style={{ padding: '2rem', background: '#e0e0e0', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* Print Button (Hidden during print) */}
-      <button
-        onClick={handlePrint}
-        className="no-print"
-        style={{
-          background: '#1e293b',
-          color: '#fff',
-          padding: '0.75rem 2rem',
-          borderRadius: '50px',
-          fontWeight: 600,
-          marginBottom: '2rem',
-          cursor: 'pointer',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-        }}
-      >
-        🖨️ Print / Save as PDF
-      </button>
+      {/* Header Buttons */}
+      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }} className="no-print">
+        <button
+          onClick={handlePrint}
+          style={{
+            background: '#1e293b',
+            color: '#fff',
+            padding: '0.75rem 2rem',
+            borderRadius: '50px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            border: 'none'
+          }}
+        >
+          🖨️ Print Resume
+        </button>
+        <button
+          onClick={handlePrint}
+          style={{
+            background: 'var(--primary, #6366f1)',
+            color: '#fff',
+            padding: '0.75rem 2rem',
+            borderRadius: '50px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            border: 'none'
+          }}
+        >
+          📥 Download PDF
+        </button>
+      </div>
 
       {/* Resume Paper */}
       <div id="resume-paper" className="resume-grid" style={{
@@ -70,7 +88,8 @@ const Resume = () => {
             <div style={{ fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span>📞</span> <span>+91 9515603659</span></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', wordBreak: 'break-all' }}><span>✉️</span> <span>naidulokesh728@gmail.com</span></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span>📍</span> <span>Vizag, AP, India</span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><span>📍</span> <span>Visakhapatnam, AP</span></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', wordBreak: 'break-all' }}><span>🔗</span> <span>linkedin.com/in/kilaparthi-yernaidu-232689246/</span></div>
             </div>
           </div>
 
@@ -110,15 +129,19 @@ const Resume = () => {
           <div style={{ marginBottom: '20px' }}>
             <h2 style={{ fontSize: '0.95rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '3px' }}>PERSONAL</h2>
             <div style={{ fontSize: '0.7rem', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+              <div><strong>Name:</strong> k.Yernaidu</div>
               <div><strong>DOB:</strong> 10-Jun-2000</div>
               <div><strong>Languages:</strong> Telugu, English, Hindi</div>
+              <div><strong>Nationality:</strong> Indian</div>
+              <div><strong>Marital Status:</strong> Single</div>
+              <div><strong>Mother Tongue:</strong> Telugu</div>
               <div style={{ marginTop: '3px' }}>
-                <strong>Current Addr:</strong><br/>
+                <strong>Current Address:</strong><br/>
                 MVP, Sector 6, Visakhapatnam
               </div>
               <div style={{ marginTop: '3px' }}>
-                <strong>Permanent Addr:</strong><br/>
-                Laxmipuram, VZM Dist
+                <strong>Permanent Address:</strong><br/>
+                Laxmipuram(v), Jami(m), Vizyanagaram(Dt)
               </div>
             </div>
           </div>
@@ -142,7 +165,7 @@ const Resume = () => {
           <section style={{ margin: '0 0 5px 0', padding: '0' }}>
             <h2 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#1e293b', margin: '0 0 5px 0', borderBottom: '2px solid #1e293b', paddingBottom: '2px' }}>PROFESSIONAL SUMMARY</h2>
             <p style={{ fontSize: '0.85rem', color: '#475569', textAlign: 'justify', margin: '0', padding: '0' }}>
-              Dedicated Full Stack Engineer with over 2 years of experience in architecting and developing high-performance ERP systems and complex automation solutions. Expert in React.js, Node.js, NestJS, and TypeScript. Specializing in digitizing large-scale manual workflows, RESTful API Design, Background Processing (BullJS/Redis), and Database Schema Optimization. Adept at leading cross-functional teams to deliver scalable, production-ready software.
+              Dedicated Full Stack Engineer with over {yearsExp} years of experience in architecting and developing high-performance ERP systems and complex automation solutions. Expert in React.js, Node.js, NestJS, and TypeScript. Specializing in digitizing large-scale manual workflows, RESTful API Design, Background Processing (BullJS/Redis), and Database Schema Optimization. Adept at leading cross-functional teams to deliver scalable, production-ready software.
             </p>
           </section>
 

@@ -228,11 +228,28 @@ html {
   .settings-sub-nav {
     display: flex !important;
   }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .nav-links a, .nav-links button {
+    font-size: 0.75rem !important;
+  }
+
+  .hire-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.7rem !important;
+  }
 }
 
 @media (min-width: 769px) {
   .settings-sub-nav {
     display: none !important;
+  }
+  
+  .desktop-only {
+    display: flex !important;
   }
 }
 

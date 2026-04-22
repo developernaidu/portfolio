@@ -1,6 +1,9 @@
 import React from 'react';
 
 const About = () => {
+  const yearsExp = new Date().getFullYear() - 2022;
+  const age = new Date().getFullYear() - 2000;
+
   return (
     <section id="about" className="container">
       <h2 className="section-title">About Me</h2>
@@ -11,12 +14,12 @@ const About = () => {
           </h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '1.05rem', lineHeight: '1.8' }}>
             I am a Full Stack Developer currently contributing to major enterprise projects at <strong>Schemax Export Techno Craft Pvt. Ltd</strong> (since January 2022). 
-            I specialize in building complex ERP systems and microservices-based architectures that solve real-world industry challenges.
+            I specialize in building complex ERP systems and microservices-based architectures that solve real-world industry challenges with {yearsExp}+ years of focused experience.
           </p>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)' }}>
-              📅 <span>Born June 10, 2000</span>
+              📅 <span>Born June 10, 2000 ({age} Years Old)</span>
             </div>
           </div>
         </div>
